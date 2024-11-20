@@ -20,10 +20,12 @@ export function AddressForm() {
       <div className="row">
         <Input
           placeholder="CEP"
-          type="number"
+          type="text"
           className="cep"
           {...register('cep')}
           error={errors.cep?.message}
+          id="cep"
+          // pattern="\d{5}-\d{3}"
         />
       </div>
       <div className="row">
@@ -32,6 +34,7 @@ export function AddressForm() {
           className="street"
           {...register('street')}
           error={errors.street?.message}
+          id="rua"
         />
       </div>
       <div className="row">
@@ -40,6 +43,7 @@ export function AddressForm() {
           placeholder="Número"
           {...register('number')}
           error={errors.number?.message}
+          id="numero"
         />
         <Input
           placeholder="Complemento"
@@ -47,6 +51,7 @@ export function AddressForm() {
           {...register('complement')}
           error={errors.complement?.message}
           rightText="Opcional"
+          id="complemento"
         />
       </div>
       <div className="row">
@@ -54,18 +59,21 @@ export function AddressForm() {
           placeholder="Bairro"
           {...register('district')}
           error={errors.district?.message}
+          id="bairro"
         />
         <Input
           placeholder="Cidade"
           className="city"
           {...register('city')}
           error={errors.city?.message}
+          id="cidade"
         />
         <Input
           placeholder="UF"
           className="uf"
           {...register('uf')}
           error={errors.uf?.message}
+          id="uf"
         />
       </div>
     </AddressFormContainer>
