@@ -9,14 +9,17 @@ export const paymentMethods = {
   credit: {
     label: 'Cartão de Cŕedito',
     icon: <CreditCard size={16} />,
+    id: 'creditButton',
   },
   debit: {
     label: 'Cartão de Débito',
     icon: <Bank size={16} />,
+    id: 'debitButton',
   },
   money: {
     label: 'Dinheiro',
     icon: <Money size={16} />,
+    id: 'moneyButton',
   },
 }
 
@@ -30,10 +33,10 @@ export function PaymentMethodOptions() {
 
   return (
     <PaymentMethodOptionsContainer>
-      {Object.entries(paymentMethods).map(([key, { label, icon }]) => (
+      {Object.entries(paymentMethods).map(([key, { label, icon, id }]) => (
         <PaymentMethodInput
           key={label}
-          id={key}
+          id={id}
           icon={icon}
           label={label}
           value={key}
